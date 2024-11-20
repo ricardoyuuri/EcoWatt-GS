@@ -3,8 +3,8 @@ using System;
 using EcoWatt.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Oracle.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
@@ -17,100 +17,94 @@ namespace EcoWatt.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            OracleModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("EcoWatt.Models.Consumo", b =>
                 {
                     b.Property<int>("ConsumoId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ConsumoId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ConsumoId"));
 
                     b.Property<DateTime>("Data_Consumo")
-                        .HasColumnType("TIMESTAMP(7)")
-                        .HasColumnName("dt_consumo");
+                        .HasColumnType("datetime2");
 
-                    b.Property<string>("Hora_Consumo")
-                        .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("qt_horas_uso");
+                    b.Property<int>("Hora_Consumo")
+                        .HasColumnType("int");
 
                     b.Property<int>("Quantidade_Watts")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("vl_consumo_watts");
+                        .HasColumnType("int");
 
                     b.HasKey("ConsumoId");
 
-                    b.ToTable("_Consumo");
+                    b.ToTable("Consumos");
                 });
 
             modelBuilder.Entity("EcoWatt.Models.Eletrodomesticos", b =>
                 {
                     b.Property<int>("EletrodomesticosId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EletrodomesticosId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("EletrodomesticosId"));
 
                     b.Property<string>("Categoria")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("ds_categoria");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Modelo")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("ds_modelo");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Nome_Aparelho")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("nm_nome");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<int>("Valor_Consumo_Watts")
-                        .HasColumnType("NUMBER(10)")
-                        .HasColumnName("vl_aparelho_consumo_watts");
+                        .HasColumnType("int");
 
                     b.HasKey("EletrodomesticosId");
 
-                    b.ToTable("_Eletrodomesticos");
+                    b.ToTable("Eletrodomesticos");
                 });
 
             modelBuilder.Entity("EcoWatt.Models.Usuario", b =>
                 {
                     b.Property<int>("UsuarioId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
-                    OraclePropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuarioId"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UsuarioId"));
 
                     b.Property<string>("CEP")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("cd_cep");
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("ds_email");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("nm_nome");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasColumnType("NVARCHAR2(2000)")
-                        .HasColumnName("cd_senha");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("UsuarioId");
 
-                    b.ToTable("_Usuario");
+                    b.ToTable("Usuarios");
                 });
 #pragma warning restore 612, 618
         }

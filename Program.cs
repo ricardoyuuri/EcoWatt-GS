@@ -7,9 +7,9 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Configuração do DbContext com SQL Server
 builder.Services.AddDbContext<dbContext>(options =>
-    options.UseOracle(builder.Configuration.GetConnectionString("OracleConnection"))
+    options.UseSqlServer(builder.Configuration.GetConnectionString("SqlServerConnection"))
 );
 
 builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
@@ -36,11 +36,11 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 
-    app.UseSwagger(options =>
-    {
-        options.SerializeAsV2 = true;
-    });
-    app.UseSwaggerUI();
+app.UseSwagger(options =>
+{
+    options.SerializeAsV2 = true;
+});
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
