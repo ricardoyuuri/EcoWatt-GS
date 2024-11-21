@@ -357,6 +357,8 @@ Abra o aplicativo do banco de dados na nuvem e coloque a sua conexão.
 
 ![image](https://github.com/user-attachments/assets/e5efe991-6ab0-45f6-848c-a57fa35a045d)
 
+O acesso do banco de dados da aplicação esta no arquivo "appsettings.json"!
+
 # Passo 10 - Testando os endpoints
 
 ## Teste todos os endpoints das três tabelas que estão no Swagger!!!
@@ -388,8 +390,6 @@ No banco de dados poderemos ver que a alteração foi bem sucedida!
 Realize o GET novamente para ver a alteração ou veja pelo banco de dados!
 
 ![image](https://github.com/user-attachments/assets/e5ad91eb-17d3-4c0a-b414-f969ab7936b9)
-
-O acesso do banco de dados da aplicação esta no arquivo "appsettings.json"!
 
 E por fim vamos realizar o DELETE pelo ID! Este método deleta um eletrodoméstico do banco.
 
