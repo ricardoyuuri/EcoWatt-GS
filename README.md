@@ -188,7 +188,7 @@ Clique em "Build"!
 
 ![image](https://github.com/user-attachments/assets/2992efad-976f-44a1-8855-53824feac9f9)
 
-Após iniciado, copie cole uma linha de cada vez no terminal e observe se tudo ocorrerá como o esperado!
+Após iniciado, copie e cole uma linha de cada vez no terminal e observe se tudo ocorrerá como o esperado!
 
 ![image](https://github.com/user-attachments/assets/1862e583-ff45-4d68-bd52-6742a8ff7e31)
 
@@ -205,27 +205,27 @@ az webapp create -g ecowatt -p ecowatt-app-ppt --runtime "dotnet:8" -n webappeco
 
 Volte para o Azure DevOps e clique em "Releases" e logo em seguida em "Create Pipeline"
 
-![image](https://github.com/user-attachments/assets/5d0c8af3-02ca-4493-bcff-e08235a8b42b)
+![image](https://github.com/user-attachments/assets/c9266513-04ac-4a54-ba9b-c2a00ceee7d4)
 
 Selecione a opção "Azure App Service deployment"!
 
-![image](https://github.com/user-attachments/assets/cea3b924-4532-4c1d-90a8-e603b7cd01e6)
+![image](https://github.com/user-attachments/assets/b4360b22-c7ca-47a7-bc1d-565290a1289b)
 
 Logo em seguida, mude o "Stage name" de "Stage 1" para "Desenvolvimento"!
 
-![image](https://github.com/user-attachments/assets/9edd74a6-1b7d-495e-a256-c2c1d0b8ac8d)
+![image](https://github.com/user-attachments/assets/f2d64377-aab8-4b8c-aed7-553afef37b7b)
 
 Em seguida clique em "Add an artifact" e no campo de "Source pipeline", selecione o nome da sua aplicação e depois adicione!
 
-![image](https://github.com/user-attachments/assets/9fbdffe5-979c-4b48-9458-b460e0c086ea)
+![image](https://github.com/user-attachments/assets/f30e6098-b7b3-4ba3-b31f-3decab83304c)
 
 Clique neste símbolo!
 
-![image](https://github.com/user-attachments/assets/52eaba3e-d4a0-4df5-b3ef-1b3d3bd14164)
+![image](https://github.com/user-attachments/assets/3a40b01f-2b31-4081-9dac-20b4a12ebf15)
 
 Agora habilite a função de "Artifact filters", depois em "add" e selecione o nome da sua aplicação e depois selecine a branch!
 
-![image](https://github.com/user-attachments/assets/b95d9ad7-4685-4d50-a97c-97e8356b78a1)
+![image](https://github.com/user-attachments/assets/86bc3c78-49a1-4530-ab00-76803dd6d70d)
 
 Agora clique em "1 job, 1 task"
 
@@ -235,45 +235,95 @@ Agora clique em "1 job, 1 task"
 
 Antes 
 
-![image](https://github.com/user-attachments/assets/8a491acb-0470-4062-afd6-7afddb3ddf97)
+![image](https://github.com/user-attachments/assets/51f483c1-105d-431c-adea-4d8cadb02522)
 
 Depois 
 
 Selecione a sua assinatura da Azure e depois em "Authorize", em seguida selecione o serviço de aplicativo que nós criamos na Azure através do cloud shell!
 
-![image](https://github.com/user-attachments/assets/5121c7e1-692f-46da-86c8-081466046adb)
+![image](https://github.com/user-attachments/assets/c1239d17-167a-4461-b705-51032579b377)
 
 No campo de Run on Agent, iremos fazer as seguintes alterações:
 
 Antes 
 
-![image](https://github.com/user-attachments/assets/f47f9628-db14-4994-a267-4c3c794d5d26)
+![image](https://github.com/user-attachments/assets/c2d09702-f9dd-41e2-afea-314d0e3ff225)
 
 Depois 
 
-![image](https://github.com/user-attachments/assets/92821e8b-53fa-4d6c-b44a-dc286f067d55)
+![image](https://github.com/user-attachments/assets/7c1da1a7-c794-474b-a94b-c81b73c698e9)
 
 Em Deploy Azure Service, não alteramos nada ah não ser conferir se o "Package or folder" está com ".zip" no final!
 
-![image](https://github.com/user-attachments/assets/d418d2ce-0a8f-44f7-9719-796b0d518233)
+![image](https://github.com/user-attachments/assets/331812b7-57b2-4715-8d69-5f914e29b08d)
 
 Em Options fazemos a seguinte confecção!
 
-![image](https://github.com/user-attachments/assets/7d57a2b3-f090-4fb7-a1cc-d0dc24701c6d)
+![image](https://github.com/user-attachments/assets/5fab2151-c8c1-4f49-957d-00e618fecdaf)
 
 Logo após, clicamos em "Save", adicionamos um comentário e em seguida clicamos em "Create release"!
 
-![image](https://github.com/user-attachments/assets/2bc6c69d-b530-4b76-a4d3-56887713aff9)
+![image](https://github.com/user-attachments/assets/a5608617-58a2-465e-b8ad-e3c5a51562fa)
 
 Escreva um comentário se quiser e clique em "Create"!
 
-![image](https://github.com/user-attachments/assets/3ed81c61-2b56-4235-816e-5c0480a573a9)
+![image](https://github.com/user-attachments/assets/d0c171b3-9cd4-4851-9ad5-1b4bea981ee7)
+
+Depois clique em "Release 1"
 
 ![image](https://github.com/user-attachments/assets/6dbb809b-0e77-4fbd-a806-2dd7c06611a3)
 
 ## Clique em Logs e observe se todos obtiveram sucesso!
 
-![image](https://github.com/user-attachments/assets/dd649750-a20f-447e-b233-32997aa14032)
+![image](https://github.com/user-attachments/assets/b7ca71da-0224-4018-9e84-ba1224bcc1ba)
+
+![image](https://github.com/user-attachments/assets/adfd8e9f-e0e9-4b88-9879-75baf26c69ba)
+
+# Passo 6 - Vamos fazer uma alteração na branch "Teste" e criar um PR para a branch "master"
+
+Vamos voltar em "Repos", certifique-se de estar na branch "Teste", depois clique em "Files" e selecione um arquivo, por exemplo: appsettings.json. Logo após vamos clicar em "Edit" e adicionar um comentário.
+
+![image](https://github.com/user-attachments/assets/56b7b17d-cfd7-495c-a36a-da240423c50d)
+
+Logo após isso, vamos clicar em "Commit", adicionar um comentário e clicar em "Commit" novamente.]
+
+Com isso realizamos uma alteração no código na branch "Teste".
+
+## Agora vamos criar um PR (Pull Requests)
+
+No menu lateral esquerdo na aba de "Repos" clique em "Pull requests".
+
+![image](https://github.com/user-attachments/assets/d634f31a-d729-40b1-bb43-b193d9e33ed8)
+
+Clique em "Create a pull request"
+
+![image](https://github.com/user-attachments/assets/7bd05327-1b02-45a1-9d7c-a014c4539015)
+
+Adicione um comentário e em "Work itens to link" selecione a nossa Task e depois clique em "Create".
+
+![image](https://github.com/user-attachments/assets/2a37e609-05dd-4de4-b6f2-416c4ffa6ed8)
+
+Clique em "Approve" e depois em "Complete".
+
+![image](https://github.com/user-attachments/assets/cfc1ad60-d796-4283-beb5-7190816060df)
+
+Nesta etapa so deixe o primeiro check box ticado e depois clique em "Complete merge".
+
+Depois podemos voltar no arquivo "appsettings.json" so que dessa vez pela branch "master" e lá poderemos ver que a alteração que havíamos feito na branch "Teste" agora esta presente nela tambem.
+
+![image](https://github.com/user-attachments/assets/86afdc62-ef0b-4a84-a1b4-13363465c4a2)
+
+Se formos em "Pipelines", poderemos ver que o "Build" da nossa aplicação está rodando novamente.
+
+![image](https://github.com/user-attachments/assets/1dd62e79-7450-4e3a-a63d-c885327a43c6)
+
+Aguarde os logs e veja se todos obtiveram sucesso.
+
+![image](https://github.com/user-attachments/assets/ff613dcd-0db7-4082-a7ac-8331409b97f0)
+
+Agora vamos voltar em "Boards" e em "Recently updated" vamos selecionar "recently completed" e assim veremos a nossa Task finalizada.
+
+![image](https://github.com/user-attachments/assets/8abf08d5-6b7e-4d78-beba-9e95bdb9a83d)
 
 # Passo 6 - Chegou a hora de vermos se tudo deu certo!
 
