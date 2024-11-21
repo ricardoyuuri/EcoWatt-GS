@@ -321,47 +321,71 @@ Aguarde os logs e veja se todos obtiveram sucesso.
 
 ![image](https://github.com/user-attachments/assets/ff613dcd-0db7-4082-a7ac-8331409b97f0)
 
-Agora vamos voltar em "Boards" e em "Recently updated" vamos selecionar "recently completed" e assim veremos a nossa Task finalizada.
+Agora vamos voltar em "Boards" e em "Recently updated" vamos selecionar "Recently completed" e assim veremos a nossa Task finalizada.
 
 ![image](https://github.com/user-attachments/assets/8abf08d5-6b7e-4d78-beba-9e95bdb9a83d)
 
-# Passo 6 - Chegou a hora de vermos se tudo deu certo!
+# Passo 7 - Vamos adicionar o professor no projeto como administrador 
+
+Para isso volte para a página inicial do "Azure DevOps" e clique em "Organization Settings" no canto inferior esquerdo.
+
+![image](https://github.com/user-attachments/assets/2cc9bd4e-06c4-4c78-903d-97e15dc8bac2)
+
+Depois clique em "Users" depois em "Add Users" e assim poderemos adicionar o novo membro da nossa organização.
+
+![image](https://github.com/user-attachments/assets/948d0362-2f7b-4f7b-b995-ea87c73e2c98)
+
+Selecione o membro novo, deixe o "Acess level" dele como "Basic" e por fim selecione o projeto em que ele terá acesso, no nosso caso o "EcoWatt". Por fim clique enm "Add".
+
+# Passo 8 - Chegou a hora de vermos se tudo deu certo!
 
 ## Abra o serviço de aplicativo em que criamos na Azure e em seguida procure o domínio padrão!
 
-![image](https://github.com/user-attachments/assets/5b2ad4e4-491b-4265-8261-1ca4d593cf86)
+![image](https://github.com/user-attachments/assets/9209e964-5ad0-4dd0-b8ee-b04f1ca3f647)
 
 Adicione "/swagger" na URL!
 
-![image](https://github.com/user-attachments/assets/1af1f78f-896a-4bf8-af97-80e9066a7a45)
+![image](https://github.com/user-attachments/assets/fe5bf391-1e44-4ce4-8b7e-13562859f537)
 
 ## Nossa aplicação rodando!
 
-![image](https://github.com/user-attachments/assets/ba7634de-2cea-4961-b14b-eefc168980dc)
+![image](https://github.com/user-attachments/assets/31ce0566-0476-49a8-95d0-13fa77ac36af)
 
-# Passo 7
+# Passo 9 - Abra o banco de dados SQL da Azure
 
-## Teste todos os endpoints das duas tabelas que estão no swagger!!!
+Abra o aplicativo do banco de dados na nuvem e coloque a sua conexão.
 
-Primeiro realize o GET e clique em "Execute"! Este método retorna todos os clientes cadastrados no banco de dados!
+![image](https://github.com/user-attachments/assets/e5efe991-6ab0-45f6-848c-a57fa35a045d)
 
-![Screenshot 2024-09-16 222259](https://github.com/user-attachments/assets/d6d970ac-f3d8-4915-b0fe-0ce9d2647884)
+# Passo 10 - Testando os endpoints
 
-Depois realize o POST e clique em "Execute"!
+## Teste todos os endpoints das três tabelas que estão no Swagger!!!
 
-![Screenshot 2024-09-16 221938](https://github.com/user-attachments/assets/42b113c8-b630-41aa-a534-360cf98a181a)
+Primeiro realize o POST e clique em "Execute"! Este método se encarrega de subir no banco de dados, novos eletrodomésticos, por exemplo:
 
-Depois realize o GET pelo ID e clique em "Execute"! Este método irá retornar o cliente em que você está procurando pelo ID!
+![image](https://github.com/user-attachments/assets/f5f07c01-9716-4a79-9b32-aad5901d4192)
 
-![Screenshot 2024-09-16 222532](https://github.com/user-attachments/assets/2b015022-3562-430c-82ac-81f7b34b3874)
+No banco ficará assim:
 
-![Screenshot 2024-09-16 222653](https://github.com/user-attachments/assets/957e68f4-29d0-4fe6-a3f2-1168667d9211)
+![image](https://github.com/user-attachments/assets/28958c41-5371-46a3-8b21-8ec580e36ba9)
 
-Depois realize o UPDATE e clique em "Execute"! Insira o ID do cliente em que deseja atualizar algum dado e altere!
+Depois realize o GET geral e clique em "Execute"! Este método retorna todos os eletrodomésticos que estão cadastrados no banco, por exemplo:
 
-![Screenshot 2024-09-16 223024](https://github.com/user-attachments/assets/4f5e650f-136e-4371-aa75-d517782185c3)
+![image](https://github.com/user-attachments/assets/9427cb80-d162-47a6-ba70-7f59b0c5aad3)
 
-![Screenshot 2024-09-16 225148](https://github.com/user-attachments/assets/0186105f-37f4-4490-9b0d-d47c2fd406c7)
+Depois realize o GET pelo ID e clique em "Execute"! Este método irá retornar o eletrodoméstico em que você está procurando pelo ID!
+
+![image](https://github.com/user-attachments/assets/4bde0b02-7ef7-467d-9c81-057512ff7003)
+
+Depois realize o UPDATE e clique em "Execute"! Insira o ID do eletrodoméstico em que deseja atualizar algum dado e altere!
+
+![image](https://github.com/user-attachments/assets/2b4a0828-e9c5-4b66-9ae6-0586746ae802)
+
+Alteramos o consumo de watts de 240 para 210!
+
+No banco de dados poderemos ver que a alteração foi bem sucedida!
+
+![image](https://github.com/user-attachments/assets/e5ad91eb-17d3-4c0a-b414-f969ab7936b9)
 
 Realize o GET novamente para ver a alteração ou veja pelo banco de dados!
 
