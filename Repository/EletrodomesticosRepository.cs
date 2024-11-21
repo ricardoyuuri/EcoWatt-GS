@@ -47,22 +47,16 @@ namespace EcoWatt.Repository
             return result; 
         }
 
-        public async void DeleteEletrodomesticos(int eletrodomesticosId)
+        public void DeleteEletrodomesticos(int eletrodomesticosId)
         {
             
-            var result = await dbContext.Eletrodomesticos.FirstOrDefaultAsync(x => x.EletrodomesticosId == eletrodomesticosId);
-
-          
-            if (result == null)
+            var result =  dbContext.Eletrodomesticos.Find(
+                eletrodomesticosId);
+            if (result != null)
             {
-                return; 
+                dbContext.Eletrodomesticos.Remove(result);
+                dbContext.SaveChanges();
             }
-
-      
-            dbContext.Eletrodomesticos.Remove(result);
-
-            
-            await dbContext.SaveChangesAsync();
         }
     }
 }

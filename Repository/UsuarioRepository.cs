@@ -66,14 +66,14 @@ namespace EcoWatt.Repository
             return usuarioNovo.Entity;
                 
         }
-        public async void DeleteUsuario(int usuarioId)
+        public void DeleteUsuario(int usuarioId)
         {
-            var result = await dbContext.Usuarios.FirstOrDefaultAsync(
-                x => x.UsuarioId == usuarioId);
+            var result =  dbContext.Usuarios.Find(
+                usuarioId);
             if (result != null)
             {
                 dbContext.Usuarios.Remove(result);
-                await dbContext.SaveChangesAsync();
+                dbContext.SaveChanges();
             }
         }
     }

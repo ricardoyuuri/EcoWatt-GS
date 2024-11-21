@@ -43,15 +43,15 @@ namespace EcoWatt.Repository
             }
             return null;
         }
-        public async void DeleteConsumo(int consumoId)
+        public void DeleteConsumo(int consumoId)
         {
-            var result = await dbContext.Consumos.FirstOrDefaultAsync(
-                x => x.ConsumoId == consumoId);
+            var result = dbContext.Consumos.Find(
+                consumoId);
 
             if (result != null) // Certifique-se de que o registro existe
             {
                 dbContext.Consumos.Remove(result);
-                await dbContext.SaveChangesAsync();
+                 dbContext.SaveChanges();
             }
         }
 
