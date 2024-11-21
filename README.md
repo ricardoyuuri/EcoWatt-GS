@@ -20,9 +20,14 @@ Nossos objetivos consistem em: Conscientizar a população quanto ao seu consumo
 
 ## Beneficios:
 O EcoWatt oferece diversos benefícios significativos para os usuários e o meio ambiente. Primeiramente, ele promove a conscientização sobre o consumo de energia, ajudando as pessoas a entenderem como suas ações impactam o planeta. Além disso, a ferramenta permite um controle mais preciso dos gastos energéticos e financeiros, possibilitando o estabelecimento de metas e o acompanhamento do consumo diário. Com previsões mensais e anuais, os usuários podem planejar melhor suas despesas e reduzir desperdícios. Em grande escala, esse tipo de monitoramento e redução contribui para a preservação ambiental e a construção de um futuro mais sustentável. 
-## Passo a passo de como criar uma Pipeline no Azure DevOps!!!
 
 ## Desenho da arquitetura
+
+
+
+
+
+## Passo a passo de como criar uma Pipeline no Azure DevOps!!!
 
 # Passo 1
 
