@@ -578,7 +578,7 @@ Cole o JSON e preencha os dados!
 
 # Extra!!!
 
-## Criação de banco de dados SQL da Azure na nuvem. Essa é uma criação de banco de exemplo somente!!! Este banco de dados foi criado para a Sprint, mas segui o mesmo passo a passo para a criação do da GS, porém não gravei, pois a gravação da criação do banco de dados não era uma exigência e ja podia realizar os requisitos da GS com ele criado!!!
+## Criação de banco de dados SQL da Azure na nuvem. Essa é uma criação de banco de exemplo somente!!! Este banco de dados foi criado para a Sprint, mas eu segui o mesmo passo a passo para a criação do da GS, porém não gravei, pois a gravação da criação do banco de dados não era uma exigência da GS e ja podia realizar os requisitos da GS com ele criado!!!
 
 Para isso crie um novo recurso e selecione "SQL Database"!
 
