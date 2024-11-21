@@ -620,184 +620,218 @@ Irá ser exebida uma tela onde iremos colocar o nosso script!!!
 
 ![Screenshot 2024-09-16 234631](https://github.com/user-attachments/assets/1a02a3d4-254a-47c7-96f3-5a70d5e0af3f)
 
+# SCRIPT SQL
+
 ```
---Criação da tabela com o drop
-DROP TABLE T_TC_CADASTRO;
-CREATE TABLE T_TC_CADASTRO(
-  id_cadastro NUMERIC NOT NULL,
-  nr_cnpj NUMERIC(14) NOT NULL,
-  varchar_senha VARCHAR(60) NOT NULL,
-  nm_razaosocial VARCHAR(80) NOT NULL,
-  CONSTRAINT T_TC_CADASTRO_PK PRIMARY KEY (id_cadastro)
+-- DROP e criação da tabela Usuario
+DROP TABLE IF EXISTS Usuario;
+CREATE TABLE Usuario (
+    UsuarioId NUMERIC NOT NULL,
+    Nome VARCHAR(100) NOT NULL,
+    Email VARCHAR(100) NOT NULL,
+    Senha VARCHAR(100) NOT NULL,
+    CEP CHAR(8) NOT NULL,
+    CONSTRAINT Usuario_PK PRIMARY KEY (UsuarioId)
 );
- 
+
 --CRUD
  
 --Create
-INSERT INTO T_TC_CADASTRO (id_cadastro, nr_cnpj, varchar_senha, nm_razaosocial) VALUES (1, 12345678901234, 'senha123', 'Empresa Exemplo LTDA');
-INSERT INTO T_TC_CADASTRO (id_cadastro, nr_cnpj, varchar_senha, nm_razaosocial) VALUES (2, 23456789012345, 'senha234', 'Empresa Exemplo LTDB');
-INSERT INTO T_TC_CADASTRO (id_cadastro, nr_cnpj, varchar_senha, nm_razaosocial) VALUES (3, 34567890123456, 'senha345', 'Empresa Exemplo LTDC');
-INSERT INTO T_TC_CADASTRO (id_cadastro, nr_cnpj, varchar_senha, nm_razaosocial) VALUES (4, 45678901234567, 'senha456', 'Empresa Exemplo LTDD');
-INSERT INTO T_TC_CADASTRO (id_cadastro, nr_cnpj, varchar_senha, nm_razaosocial) VALUES (5, 56789012345678, 'senha567', 'Empresa Exemplo LTDE');
- 
+INSERT INTO Usuario (UsuarioId, Nome, Email, Senha, CEP) VALUES (1, 'João Silva', 'joao.silva@example.com', 'senha123', '12345678');
+INSERT INTO Usuario (UsuarioId, Nome, Email, Senha, CEP) VALUES (2, 'Maria Oliveira', 'maria.oliveira@example.com', 'senha234', '87654321');
+INSERT INTO Usuario (UsuarioId, Nome, Email, Senha, CEP) VALUES (3, 'Carlos Pereira', 'carlos.pereira@example.com', 'senha345', '11223344');
+INSERT INTO Usuario (UsuarioId, Nome, Email, Senha, CEP) VALUES (4, 'Ana Souza', 'ana.souza@example.com', 'senha456', '44332211');
+INSERT INTO Usuario (UsuarioId, Nome, Email, Senha, CEP) VALUES (5, 'Lucia Almeida', 'lucia.almeida@example.com', 'senha567', '55667788');
+
 --Read
-SELECT * FROM T_TC_CADASTRO;
+SELECT * FROM Usuario;
  
 --Read pelo id
-SELECT * FROM T_TC_CADASTRO
-WHERE id_cadastro = 1;
+SELECT * FROM Usuario WHERE UsuarioId = 1;
+SELECT * FROM Usuario WHERE UsuarioId = 2;
+SELECT * FROM Usuario WHERE UsuarioId = 3;
+SELECT * FROM Usuario WHERE UsuarioId = 4;
+SELECT * FROM Usuario WHERE UsuarioId = 5;
  
-SELECT * FROM T_TC_CADASTRO
-WHERE id_cadastro = 2;
+--Read pelo nome
+SELECT * FROM Usuario WHERE Nome = 'João Silva';
  
-SELECT * FROM T_TC_CADASTRO
-WHERE id_cadastro = 3;
+--Update no nome do usuário
+UPDATE Usuario
+SET Nome = 'João Santos Atualizado'
+WHERE UsuarioId = 1;
  
-SELECT * FROM T_TC_CADASTRO
-WHERE id_cadastro = 4;
+UPDATE Usuario
+SET Nome = 'Maria Oliveira Atualizado'
+WHERE UsuarioId = 2;
  
-SELECT * FROM T_TC_CADASTRO
-WHERE id_cadastro = 5;
+UPDATE Usuario
+SET Nome = 'Carlos Pereira Atualizado'
+WHERE UsuarioId = 3;
  
---Read pelo cnpj
-SELECT * FROM T_TC_CADASTRO
-WHERE nr_cnpj = 56789012345678;
+UPDATE Usuario
+SET Nome = 'Ana Souza Atualizado'
+WHERE UsuarioId = 4;
+
+UPDATE Usuario
+SET Nome = 'Lucia Almeida Atualizado'
+WHERE UsuarioId = 5;
  
---Update no nome da razão social
-UPDATE T_TC_CADASTRO
-SET nm_razaosocial = 'Empresa Exemplo Atualizada LTDA'
-WHERE id_cadastro = 1;
- 
-UPDATE T_TC_CADASTRO
-SET nm_razaosocial = 'Empresa Exemplo Atualizada LTDB'
-WHERE id_cadastro = 2;
- 
-UPDATE T_TC_CADASTRO
-SET nm_razaosocial = 'Empresa Exemplo Atualizada LTDC'
-WHERE id_cadastro = 3;
- 
-UPDATE T_TC_CADASTRO
-SET nm_razaosocial = 'Empresa Exemplo Atualizada LTDD'
-WHERE id_cadastro = 4;
- 
-UPDATE T_TC_CADASTRO
-SET nm_razaosocial = 'Empresa Exemplo Atualizada LTDE'
-WHERE id_cadastro = 5;
- 
---Update de senha 
-UPDATE T_TC_CADASTRO
-SET varchar_senha = 'bananinha123'
-WHERE id_cadastro = 5;
+--Update do email
+UPDATE Usuario
+SET Email = 'joao.santos@atualizado.com'
+WHERE UsuarioId = 1;
  
 --Delete pelo id
-DELETE FROM T_TC_CADASTRO
-WHERE id_cadastro = 1;
+DELETE FROM Usuario WHERE UsuarioId = 1;
+DELETE FROM Usuario WHERE UsuarioId = 2;
+DELETE FROM Usuario WHERE UsuarioId = 3;
+DELETE FROM Usuario WHERE UsuarioId = 4;
+DELETE FROM Usuario WHERE UsuarioId = 5;
+
+--Delete pelo email
+DELETE FROM Usuario 
+WHERE Email = 'joao.santos@atualizado.com';
  
-DELETE FROM T_TC_CADASTRO
-WHERE id_cadastro = 2;
- 
-DELETE FROM T_TC_CADASTRO
-WHERE id_cadastro = 3;
- 
-DELETE FROM T_TC_CADASTRO
-WHERE id_cadastro = 4;
- 
-DELETE FROM T_TC_CADASTRO
-WHERE id_cadastro = 5;
- 
---Delete pelo cnpj
-DELETE FROM T_TC_CADASTRO
-WHERE nr_cnpj = 56789012345678;
- 
---Criação da tabela relacionada com drop
-DROP TABLE T_TC_CONSULTA;
-CREATE TABLE T_TC_CONSULTA(
-  id_consulta NUMERIC NOT NULL,
-  ds_consulta VARCHAR(80) NOT NULL,
-  dt_consulta DATE NOT NULL,
-  blob_csv_arquivo VARBINARY(MAX) NOT NULL,
-  id_cadastro NUMERIC NOT NULL,
-  CONSTRAINT T_TC_CONSULTA_PK PRIMARY KEY (id_consulta),
-  CONSTRAINT T_TC_CADASTRO_CONSULTA_FK FOREIGN KEY (id_cadastro) REFERENCES T_TC_CADASTRO(id_cadastro)
+-- DROP e criação da tabela Eletrodomésticos
+DROP TABLE IF EXISTS Eletrodomesticos;
+CREATE TABLE Eletrodomesticos (
+    EletrodomesticosId NUMERIC NOT NULL,
+    Nome_Aparelho VARCHAR(200) NOT NULL,
+    Valor_Consumo_Watts NUMERIC NOT NULL,
+    Categoria VARCHAR(100),
+    Modelo VARCHAR(100),
+    CONSTRAINT Eletrodomesticos_PK PRIMARY KEY (EletrodomesticosId)
 );
- 
+
 --CRUD
  
 --Create
-INSERT INTO T_TC_CONSULTA (id_consulta, ds_consulta, dt_consulta, blob_csv_arquivo, id_cadastro) VALUES (1, 'Consulta sobre impostos', '2002-10-12', CAST(0x48656C6C6F AS VARBINARY(MAX)), 1);
-INSERT INTO T_TC_CONSULTA (id_consulta, ds_consulta, dt_consulta, blob_csv_arquivo, id_cadastro) VALUES (2, 'Consulta sobre exportação', '2002-11-05', CAST(0x56656E646173 AS VARBINARY(MAX)), 2);
-INSERT INTO T_TC_CONSULTA (id_consulta, ds_consulta, dt_consulta, blob_csv_arquivo, id_cadastro) VALUES (3, 'Consulta sobre importação', '2002-09-22', CAST(0x4573746F717565 AS VARBINARY(MAX)), 3);
-INSERT INTO T_TC_CONSULTA (id_consulta, ds_consulta, dt_consulta, blob_csv_arquivo, id_cadastro) VALUES (4, 'Consulta sobre regulamentação', '2002-03-07', CAST(0x466F726E656 AS VARBINARY(MAX)), 4);
-INSERT INTO T_TC_CONSULTA (id_consulta, ds_consulta, dt_consulta, blob_csv_arquivo, id_cadastro) VALUES (5, 'Consulta sobre inovação', '2002-02-15', CAST(0x46696E616 AS VARBINARY(MAX)), 5);
- 
+INSERT INTO Eletrodomesticos (EletrodomesticosId, Nome_Aparelho, Valor_Consumo_Watts, Categoria, Modelo) VALUES (1, 'Geladeira', 500, 'Cozinha', 'Brastemp');
+INSERT INTO Eletrodomesticos (EletrodomesticosId, Nome_Aparelho, Valor_Consumo_Watts, Categoria, Modelo) VALUES (2, 'Microondas', 800, 'Cozinha', 'Electrolux');
+INSERT INTO Eletrodomesticos (EletrodomesticosId, Nome_Aparelho, Valor_Consumo_Watts, Categoria, Modelo) VALUES (3, 'Televisão', 150, 'Sala', 'Samsung');
+INSERT INTO Eletrodomesticos (EletrodomesticosId, Nome_Aparelho, Valor_Consumo_Watts, Categoria, Modelo) VALUES (4, 'Ar Condicionado', 1200, 'Quarto', 'LG');
+INSERT INTO Eletrodomesticos (EletrodomesticosId, Nome_Aparelho, Valor_Consumo_Watts, Categoria, Modelo) VALUES (5, 'Máquina de Lavar', 1000, 'Lavanderia', 'Consul');
+
 --Read
-SELECT * FROM T_TC_CONSULTA;
+SELECT * FROM Eletrodomesticos;
  
 --Read pelo id 
-SELECT * FROM T_TC_CONSULTA
-WHERE id_consulta = 1;
+SELECT * FROM Eletrodomesticos WHERE EletrodomesticosId = 1;
+SELECT * FROM Eletrodomesticos WHERE EletrodomesticosId = 2;
+SELECT * FROM Eletrodomesticos WHERE EletrodomesticosId = 3;
+SELECT * FROM Eletrodomesticos WHERE EletrodomesticosId = 4;
+SELECT * FROM Eletrodomesticos WHERE EletrodomesticosId = 5;
  
-SELECT * FROM T_TC_CONSULTA
-WHERE id_consulta = 2;
+--Read pelo nome do aparelho
+SELECT * FROM Eletrodomesticos WHERE Nome_Aparelho = 'Geladeira';
+
+--Update do nome do aparelho
+UPDATE Eletrodomesticos
+SET Nome_Aparelho = 'Geladeira Inverter'
+WHERE EletrodomesticosId = 1;
  
-SELECT * FROM T_TC_CONSULTA
-WHERE id_consulta = 3;
+UPDATE Eletrodomesticos
+SET Nome_Aparelho = 'Microondas Inverter'
+WHERE EletrodomesticosId = 2;
  
-SELECT * FROM T_TC_CONSULTA
-WHERE id_consulta = 4;
+UPDATE Eletrodomesticos
+SET Nome_Aparelho = 'Televisão Inverter'
+WHERE EletrodomesticosId = 3;
  
-SELECT * FROM T_TC_CONSULTA
-WHERE id_consulta = 5;
+UPDATE Eletrodomesticos
+SET Nome_Aparelho = 'Ar Condicionado Inverter'
+WHERE EletrodomesticosId = 4;
  
---Read pela data da consulta
-SELECT * FROM T_TC_CONSULTA
-WHERE dt_consulta = '2002-10-12';
+UPDATE Eletrodomesticos
+SET Nome_Aparelho = 'Máquina de LavarInverter'
+WHERE EletrodomesticosId = 5;
  
---Update da descrição da consulta
-UPDATE T_TC_CONSULTA
-SET ds_consulta = 'Consulta sobre impostos atualizada'
-WHERE id_consulta = 1;
- 
-UPDATE T_TC_CONSULTA
-SET ds_consulta = 'Consulta sobre exportação atualizada'
-WHERE id_consulta = 2;
- 
-UPDATE T_TC_CONSULTA
-SET ds_consulta = 'Consulta sobre importação atualizada'
-WHERE id_consulta = 3;
- 
-UPDATE T_TC_CONSULTA
-SET ds_consulta = 'Consulta sobre regulamentação atualizada'
-WHERE id_consulta = 4;
- 
-UPDATE T_TC_CONSULTA
-SET ds_consulta = 'Consulta sobre inovação atualizada'
-WHERE id_consulta = 5;
- 
---Update da data da consulta
-UPDATE T_TC_CONSULTA
-SET dt_consulta = '2000-10-12'
-WHERE id_consulta = 5;
- 
+--Update do valor do consumo
+UPDATE Eletrodomesticos
+SET Valor_Consumo_Watts = 400
+WHERE EletrodomesticosId = 2;
+
 --Delete pelo id
-DELETE FROM T_TC_CONSULTA
-WHERE id_consulta = 1;
+DELETE FROM Eletrodomesticos WHERE EletrodomesticosId = 1;
+DELETE FROM Eletrodomesticos WHERE EletrodomesticosId = 2;
+DELETE FROM Eletrodomesticos WHERE EletrodomesticosId = 3;
+DELETE FROM Eletrodomesticos WHERE EletrodomesticosId = 4;
+DELETE FROM Eletrodomesticos WHERE EletrodomesticosId = 5;
  
-DELETE FROM T_TC_CONSULTA
-WHERE id_consulta = 2;
+--Delete pelo modelo
+DELETE FROM Eletrodomesticos 
+WHERE Modelo = 'Brastemp';
+
+-- DROP e criação da tabela Consumo
+DROP TABLE IF EXISTS Consumo;
+CREATE TABLE Consumo (
+    ConsumoId NUMERIC NOT NULL,
+    Data_Consumo DATE NOT NULL,
+    Hora_Consumo NUMERIC NOT NULL,
+    Quantidade_Watts NUMERIC NOT NULL,
+    CONSTRAINT Consumo_PK PRIMARY KEY (ConsumoId)
+);
+
+--CRUD
  
-DELETE FROM T_TC_CONSULTA
-WHERE id_consulta = 3;
+--Create
+INSERT INTO Consumo (ConsumoId, Data_Consumo, Hora_Consumo, Quantidade_Watts) VALUES (1, '2024-11-01', 12, 100);
+INSERT INTO Consumo (ConsumoId, Data_Consumo, Hora_Consumo, Quantidade_Watts) VALUES (2, '2024-11-02', 15, 200);
+INSERT INTO Consumo (ConsumoId, Data_Consumo, Hora_Consumo, Quantidade_Watts) VALUES (3, '2024-11-03', 18, 300);
+INSERT INTO Consumo (ConsumoId, Data_Consumo, Hora_Consumo, Quantidade_Watts) VALUES (4, '2024-11-04', 20, 400);
+INSERT INTO Consumo (ConsumoId, Data_Consumo, Hora_Consumo, Quantidade_Watts) VALUES (5, '2024-11-05', 22, 500);
+
+--Read
+SELECT * FROM Consumo;
+
+--Read pelo id
+SELECT * FROM Consumo WHERE ConsumoId = 1;
+SELECT * FROM Consumo WHERE ConsumoId = 2;
+SELECT * FROM Consumo WHERE ConsumoId = 3;
+SELECT * FROM Consumo WHERE ConsumoId = 4;
+SELECT * FROM Consumo WHERE ConsumoId = 5;
+
+--Read pela data
+SELECT * FROM Consumo WHERE Data_Consumo = '2024-11-05';
+
+--Update na quantidade de watts
+UPDATE Consumo
+SET Quantidade_Watts = 230
+WHERE ConsumoId = 1;
  
-DELETE FROM T_TC_CONSULTA
-WHERE id_consulta = 4;
+UPDATE Consumo
+SET Quantidade_Watts = 345
+WHERE ConsumoId = 2;
  
-DELETE FROM T_TC_CONSULTA
-WHERE id_consulta = 5;
+UPDATE Consumo
+SET Quantidade_Watts = 100
+WHERE ConsumoId = 3;
  
---Delete pela data da consulta
-DELETE FROM T_TC_CONSULTA
-WHERE dt_consulta = '2000-10-12';
+UPDATE Consumo
+SET Quantidade_Watts = 550
+WHERE ConsumoId = 4;
+ 
+UPDATE Consumo
+SET Quantidade_Watts = 690
+WHERE ConsumoId = 5;
+
+-- Update na data do consumo
+UPDATE Consumo
+SET Data_Consumo = '2024-11-04'
+WHERE ConsumoId = 5;
+
+--Delete pelo ID
+DELETE FROM Consumo WHERE ConsumoId = 1;
+DELETE FROM Consumo WHERE ConsumoId = 2;
+DELETE FROM Consumo WHERE ConsumoId = 3;
+DELETE FROM Consumo WHERE ConsumoId = 4;
+DELETE FROM Consumo WHERE ConsumoId = 5; 
+
+--Delete pela data
+DELETE FROM Consumo 
+WHERE Data_Consumo = '2024-11-01';
+
 ```
 
 ## Por fim podemos ver a criação do banco de dados dentro do grupo de recursos!!!
