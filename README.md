@@ -620,6 +620,8 @@ Irá ser exebida uma tela onde iremos colocar o nosso script!!!
 
 ![Screenshot 2024-09-16 234631](https://github.com/user-attachments/assets/1a02a3d4-254a-47c7-96f3-5a70d5e0af3f)
 
+No fim é so ir em "Cadeia de conexão" na menu lateral e pegar a string de conexão e colocar no seu projeto.
+
 # SCRIPT SQL
 
 ```
