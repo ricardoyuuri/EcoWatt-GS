@@ -527,6 +527,35 @@ Digite o ID e altere o dado!
 
 Somente o número do ID!
 
+## Cadastro
+
+### POST 
+
+Cole o JSON e preencha os dados, menos o ID, pois é gerado automaticamente!
+
+```
+{
+  "usuarioId": 0,
+  "nome": "string",
+  "email": "user@example.com",
+  "senha": "string",
+  "cep": "string"
+}
+```
+
+## Login
+
+### POST 
+
+Cole o JSON e preencha os dados!
+
+```
+{
+  "email": "string",
+  "senha": "string"
+}
+```
+
 # No final o serviço de WebApp ficará assim na Azure!!!
 
 ![image](https://github.com/user-attachments/assets/0879124d-1814-44ca-b389-eb6bd21fad94)
