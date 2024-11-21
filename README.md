@@ -1,21 +1,36 @@
 # EcoWatt
 
+## Desenvolvedores 
+- Eduardo Foncesca Finardi | RM: 98624 | 2TDSA
+- Lucca Rinaldi Valladão de Freitas | RM: 98207 | 2TDSA
+- Ricardo Yuri Gonçalves Domingues | RM: 551808 | 2TDSA
+- Angélica Ferreira de Matos Melo | RM: 550776 | 2TDSR
+- Matheus Roberto Aparecido | RM: 98581 | 2TDSA
+
+![image](https://github.com/user-attachments/assets/5530b6fc-ee27-444f-9219-55c2996b9d76)
+
+## Descritivo da problemática
+O planeta Terra se encontra em uma era específica da sua história que é a globalização, onde o mundo todo se encontra conectado e em constante integração entre si. Dentro desse contexto e entendendo a situação climática que vem se agravando desde o começo da revolução industrial com a constante, massiva e cada vez maior pegada ambiental, nos vemos (população mundial) com um único objetivo: Melhorar!
+Portanto é necessário adotar meios para um futuro mais sustentável e ecológico visando a preservação da vida na terra. Vendo essa situação e o papel da população dentro desse processo, nós da EcoWatt viemos com a pequena mudança, que em grande escala fará uma diferença necessária.
+
+
 ## Descritivo da solução
 O projeto EcoWatt consiste no desenvolvimento de um aplicativo de gerenciamento e controle de gasto energético doméstico, tendo como algumas funcionalidades: Registro de eletrodomésticos e seus respectivos consumos (em Watts), inserção de metas de consumo, previsões de consumo mensal e anual, registro de consumo diário. 
 Nossos objetivos consistem em: Conscientizar a população quanto ao seu consumo energético e entender o impacto disso no meio ambiente, entender a previsão de gastos (financeiros e energéticos) e poder fazer o devido controle, além do domínio do gerenciamento da sua própria casa, que para muitos é algo complicado devido a falta de recursos como esse que a EcoWatt está oferecendo.
 
-
+## Beneficios:
+O EcoWatt oferece diversos benefícios significativos para os usuários e o meio ambiente. Primeiramente, ele promove a conscientização sobre o consumo de energia, ajudando as pessoas a entenderem como suas ações impactam o planeta. Além disso, a ferramenta permite um controle mais preciso dos gastos energéticos e financeiros, possibilitando o estabelecimento de metas e o acompanhamento do consumo diário. Com previsões mensais e anuais, os usuários podem planejar melhor suas despesas e reduzir desperdícios. Em grande escala, esse tipo de monitoramento e redução contribui para a preservação ambiental e a construção de um futuro mais sustentável. 
 ## Passo a passo de como criar uma Pipeline no Azure DevOps!!!
 
 # Passo 1
 
 ### Se logar na sua conta da Microsoft Azure e pesquisar na barrinha de pesquisas por "Azure DevOps"
 
-![image](https://github.com/user-attachments/assets/34a0ff26-263b-4f0b-9f63-273f7795b437)
+![image](https://github.com/user-attachments/assets/064f8dec-f718-4ec5-a821-da63462c8f3d)
 
 Logo após irá aparecer a seguinte tela:
 
-![image](https://github.com/user-attachments/assets/589e3ce4-c8e0-4954-ae22-23c84c835ec4)
+![image](https://github.com/user-attachments/assets/24d62aeb-a9a8-402f-9b75-c44a1e060916)
 
 Clique em "My Azure DevOps Organizations"
 
@@ -23,37 +38,73 @@ Clique em "My Azure DevOps Organizations"
 
 ## Criação do projeto em que iremos subir nossa Pipeline!
 
-![image](https://github.com/user-attachments/assets/7b8d1ea1-9e91-43e3-bcd5-b3f8e929993d)
+![image](https://github.com/user-attachments/assets/920b930c-0a73-46b4-bc0c-621e120c5111)
+
+## Criação de uma Task
+
+Assim que o projeto for criado, clique em "Boards", depois em "Work itens", clique em "New Work Item" e selecione "Task"!
+
+![image](https://github.com/user-attachments/assets/8d6bcfaa-0d15-4101-bbcb-b49f205dc3d6)
+
+Atribua o nome da tarefa como "Implementar EcoWatt no Azure devOps"! 
+
+Adicione uma breve descrição, mude o  "State" para ativo e em "No one selected" selecione um RM representante
+
+## Clone do código fonte para o Azure Repos
 
 Vamos precisar fazer o clone do repositório da nossa apliação DOTNET!
 
-![image](https://github.com/user-attachments/assets/e9675098-2d75-4b6c-b3fe-e1dbb9117b8e)
+![image](https://github.com/user-attachments/assets/0e6f9091-5d69-4d3f-8435-171384f814c9)
 
 Após isso clique em Repos no menu lateral esquerdo, depois clique no nome da aplicação e em seguida em "Import Repository"
 
-![image](https://github.com/user-attachments/assets/43c7f8b1-c29e-4c6d-a651-c053586dedb3)
+![image](https://github.com/user-attachments/assets/d10bf99e-a8c2-47c3-8e87-05956f28ebde)
 
 Cole a URL do seu repositório e clique em "importar"
 
-![image](https://github.com/user-attachments/assets/fb55a14c-5043-480e-b047-ae67e84dedff)
+![image](https://github.com/user-attachments/assets/fb01caa1-039b-43f4-a551-4e3c0ef5e6c8)
+
+## Criação de uma branch nova
+
+Depois que o repositório for importado corretamente, clique em "Files" selecione a branch "master" e depois clique em "New branch".
+
+![image](https://github.com/user-attachments/assets/4b70210f-051a-40bc-b3ae-b75ba300673c)
+
+Atribua o nome "Teste" para a nova branch e em "Work itens to link" selecione a tarefa em que criamos e depois clique em "create".
+
+## Protegendo a branch master 
+
+Após isso clique em "Branches" no menu lateral dentro do "Repos", depois clique nos 3 pontinhos da branch "master" e clique em "Branch polices".
+
+![image](https://github.com/user-attachments/assets/4e81b160-916a-40ec-a4ad-24b90251cc62)
+
+Habilite a função de "Require a minimum number of reviewrs". Coloque somente 1 e habilite o primeiro check box.
+
+![image](https://github.com/user-attachments/assets/ee75de59-6be0-435d-ab6d-9ccb48e76222)
+
+Habilite a função "Check for linked work itens" e deixe como obrigatório.
+
+Depois disso vá em "Automatically included reviewrs" e adicione um RM e clique em "Save". 
+
+![image](https://github.com/user-attachments/assets/88bbe77e-84cb-4209-b64e-333e3e592ead)
 
 # Passo 3
 
-## Após o importe vá para a área de Pipeline e clique em "Create Pipeline"
+## Após isso tudo, vá para a área de Pipeline e clique em "Create Pipeline"
 
-![image](https://github.com/user-attachments/assets/eeafd353-d9e7-481c-aa6b-9c53221c59dd)
+![image](https://github.com/user-attachments/assets/77b7b5d1-85d1-49fb-a3c2-c8e4855ab3c0)
 
 Clique em "Use the classic editor"
 
-![image](https://github.com/user-attachments/assets/3be621ad-6541-4bcc-8675-4abec5cb036d)
+![image](https://github.com/user-attachments/assets/6ed06640-eb1f-499c-9b2e-2faeebbd7e44)
 
 Clique em "Continue"
 
-![image](https://github.com/user-attachments/assets/4464c48b-6a2f-4625-aa81-48cbe103691f)
+![image](https://github.com/user-attachments/assets/20dfcd8a-c521-4c05-9735-6bf368a4a5ce)
 
 Selecione o template de ASP.NET
 
-![image](https://github.com/user-attachments/assets/70becbf8-35b2-4c60-9169-8c65359ff284)
+![image](https://github.com/user-attachments/assets/f794a495-3a1d-4651-8e05-682386482d2a)
 
 ## Agora vamos começar a configuração da nossa Pipeline
 
@@ -61,51 +112,51 @@ No campo de Pipeline nós vamos deixar da seguinte forma:
 
 Antes
 
-![image](https://github.com/user-attachments/assets/7691f31a-343e-4ae9-bdc4-653088d01267)
+![image](https://github.com/user-attachments/assets/33252fec-7777-4a23-8d50-68b3a8ce51fd)
 
 Depois
 
-![image](https://github.com/user-attachments/assets/7e909100-cac8-45cb-8417-f6789c2448f6)
+![image](https://github.com/user-attachments/assets/6317edcd-b17e-4a51-8383-33efed13fc84)
 
 No campo de Agent Job 1 nós vamos deixar da seguinte forma:
 
 Antes 
 
-![image](https://github.com/user-attachments/assets/4a1b7397-d155-4265-8e7b-2bce5dd40c9d)
+![image](https://github.com/user-attachments/assets/1ee34c75-67e4-4e6e-ba66-a0bce873a7a5)
 
 Depois 
 
-![image](https://github.com/user-attachments/assets/1a1eb87f-f63d-4a72-ae9f-d3526cb4253a)
+![image](https://github.com/user-attachments/assets/69acbd24-8869-475f-8feb-de0118f6e8f5)
 
 No campo de Use NuGet nós vamos deixar da seguinte forma:
 
 Antes 
 
-![image](https://github.com/user-attachments/assets/9caff582-eaaa-4165-8759-fedf38f8c327)
+![image](https://github.com/user-attachments/assets/45387a86-3f20-41b8-854b-085b78fa43fe)
 
 Depois 
 
-![image](https://github.com/user-attachments/assets/6f633199-430b-4d93-b20a-53a85eefd48c)
+![image](https://github.com/user-attachments/assets/d680a176-1143-400c-b0a3-7f9fcb828ffa)
 
 Não iremos alterar nada no campo de NuGet Restore!
 
 No campo de Build Solution só iremos alterar o nome e deixar somente Build!
 
-![image](https://github.com/user-attachments/assets/0961e396-8342-46c2-85ea-f51ed76946de)
+![image](https://github.com/user-attachments/assets/51826616-a0d6-4575-af74-cbfdb90b68fd)
 
 O mesmo faremos com o campo de Test Assemblies! Mudando o nome para Teste!
 
-![image](https://github.com/user-attachments/assets/d4c627b7-9837-4f9e-bb94-2eb0e4fe1a9e)
+![image](https://github.com/user-attachments/assets/a969dcb7-3d48-45f9-bc3d-12502fc556e8)
 
 No campo de Publish symbols path iremos deixar da seguinte maneira:
 
 Antes 
 
-![image](https://github.com/user-attachments/assets/c3eb25d0-c674-4b70-b2aa-b662a60d5d93)
+![image](https://github.com/user-attachments/assets/9dd52921-4c06-45c2-9d2c-49bb600adcb0)
 
 Depois
 
-![image](https://github.com/user-attachments/assets/99bd1402-f245-452d-8986-16e18a6fdfe5)
+![image](https://github.com/user-attachments/assets/dad58c8c-ff18-41be-93f8-fcd5a3071aaa)
 
 Lembre-se de clicar em "Authorize" no campo de "Azure Resource"
 
@@ -113,33 +164,42 @@ No campo de Publish Artifact nâo iremos mudar nada!
 
 Em Triggers, iremos habilitar a função de "continuos integration" e selecionar a branch da nossa solução!
 
-![image](https://github.com/user-attachments/assets/0c7dbf7f-dd41-4173-9c31-fc471c82f0b1)
+![image](https://github.com/user-attachments/assets/d7e124f8-a3df-4238-8ea4-d3bcd969769e)
 
 Em Options, iremos mudar o campo de "Build job authorization scope" de "Current project", para "Project collection"!
 
-![image](https://github.com/user-attachments/assets/9ef615df-8c6f-42a9-80cc-d080857a9732)
+![image](https://github.com/user-attachments/assets/0ce51edf-68ec-47fb-bf73-5bb46cd4aebd)
 
 ## Clique em "Save & queue" escreva um comentário se quiser e clique em "Save and run"!
 
-![image](https://github.com/user-attachments/assets/310acf1d-044d-4b25-bb1b-cd93fa52f6e7)
+![image](https://github.com/user-attachments/assets/598309c7-a284-4755-be44-72109a782e7d)
 
 Clique em "Build"!
 
-![image](https://github.com/user-attachments/assets/2390699b-6ef4-48c7-b53f-455d9e70951b)
+![image](https://github.com/user-attachments/assets/df8eb627-4d0d-4b82-a2ba-8aee03fd8d26)
 
 ## Observe se todos os Logs obtiveram sucesso!
 
-![image](https://github.com/user-attachments/assets/c1897e63-2b3f-4c1d-8af6-a63c3f891d7f)
+![image](https://github.com/user-attachments/assets/f66dd36d-7ebd-4bb0-a557-06e3138f0fab)
 
 # Passo 4 - Criação de um grupo de recursos com um WebApp na Azure
 
 ## Abra o Microsoft Azure e inicie um terminal no cloud shell!
 
-![image](https://github.com/user-attachments/assets/3c8f6bb3-1efd-4938-b314-f0a8e0618278)
+![image](https://github.com/user-attachments/assets/2992efad-976f-44a1-8855-53824feac9f9)
 
 Após iniciado, copie cole uma linha de cada vez no terminal e observe se tudo ocorrerá como o esperado!
 
-![image](https://github.com/user-attachments/assets/35b12e41-1241-4778-aefd-7b3ac56a64af)
+![image](https://github.com/user-attachments/assets/1862e583-ff45-4d68-bd52-6742a8ff7e31)
+
+## Scripts do azure CLI para a criação dos recursos em nuvem
+
+```
+az account set --subscription "Azure for Students"
+az group create --name ecowatt --location brazilsouth 
+az appservice plan create -n ecowatt-app-ppt --location brazilsouth -g ecowatt --sku F1
+az webapp create -g ecowatt -p ecowatt-app-ppt --runtime "dotnet:8" -n webappecowatt
+```
 
 # Passo 5 - Criação de uma Release!
 
@@ -587,9 +647,19 @@ WHERE dt_consulta = '2000-10-12';
 
 ![Screenshot 2024-09-16 235457](https://github.com/user-attachments/assets/aa0130a9-09a8-4956-8485-881e12ebe4c2)
 
-# Link do vídeo:
+# Link do Azure DevOps:
 
-https://youtu.be/8eF05_UdQEE?feature=shared
+https://dev.azure.com/RM551808/EcoWatt
+
+# Link do Azure Repos:
+
+https://dev.azure.com/RM551808/EcoWatt/_git/EcoWatt-GS.git
+
+# Link GitHub:
+
+https://github.com/ricardoyuuri/EcoWatt-GS
+
+# Link do Vídeo:
 
 
 
