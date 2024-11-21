@@ -385,43 +385,40 @@ Alteramos o consumo de watts de 240 para 210!
 
 No banco de dados poderemos ver que a alteração foi bem sucedida!
 
-![image](https://github.com/user-attachments/assets/e5ad91eb-17d3-4c0a-b414-f969ab7936b9)
-
 Realize o GET novamente para ver a alteração ou veja pelo banco de dados!
+
+![image](https://github.com/user-attachments/assets/e5ad91eb-17d3-4c0a-b414-f969ab7936b9)
 
 O acesso do banco de dados da aplicação esta no arquivo "appsettings.json"!
 
-![Screenshot 2024-09-16 224943](https://github.com/user-attachments/assets/9cb7a113-595f-40fd-b2c7-09b439dac2a5)
+E por fim vamos realizar o DELETE pelo ID! Este método deleta um eletrodoméstico do banco.
 
-E por fim vamos realizar o DELETE pelo ID!
+![image](https://github.com/user-attachments/assets/bfc2e36a-fc4f-4292-97ac-b1e360909f2e)
 
-![Screenshot 2024-09-16 225515](https://github.com/user-attachments/assets/26903859-4e02-495b-b832-7ca725bd08b6)
+O banco de dados por sua vez ficará sem o ID 7
 
-![Screenshot 2024-09-16 225537](https://github.com/user-attachments/assets/91806011-cb8c-4600-9e78-4dd5b5d48ee1)
+![image](https://github.com/user-attachments/assets/9398d919-4e62-4f15-8b20-7b0aa3135f0c)
 
-## Agora é só testar todos os endpoints da tabela consultoria e ver a persistência dos dados no banco!!!
+## Agora é só testar todos os endpoints das outras tabelas e ver a persistência dos dados no banco SQL da Azure!!!
 
 ## Scripts JSON do CRUD!
 
-## Tabela Cliente
+## Tabela Consumo
 
 ### GET
 
-Retorna todos os clientes salvos no banco de dados!
+Retorna todos os consumos salvos no banco de dados!
 
 ### POST 
 
-Cole o JSON e altere os dados, menos o ID, pois é gerado automaticamente!
+Cole o JSON e preencha os dados, menos o ID, pois é gerado automaticamente!
 
 ```
 {
-  "clienteId": 0,
-  "cnpj": "string",
-  "nome": "string",
-  "logradouro": "string",
-  "ramodeAtuacao": "string",
-  "email": "string",
-  "senha": 0
+  "consumoId": 0,
+  "data_Consumo": "2024-11-21T19:15:20.793Z",
+  "hora_Consumo": 0,
+  "quantidade_Watts": 0
 }
 ```
 
@@ -435,34 +432,34 @@ Digite o ID e altere o dado!
 
 ```
 {
-  "clienteId": 0,
-  "cnpj": "string",
-  "nome": "string",
-  "logradouro": "string",
-  "ramodeAtuacao": "string",
-  "email": "string",
-  "senha": 0
+  "consumoId": 0,
+  "data_Consumo": "2024-11-21T19:15:20.793Z",
+  "hora_Consumo": 0,
+  "quantidade_Watts": 0
 }
 ```
 
 ### DELETE
 
-Soemente o número do ID!
+Somente o número do ID!
 
-## Tabela consultoria 
+## Tabela Eletrodoméstico
 
 ### GET 
 
-Retorna todos as consultorias salvas no banco de dados!
+Retorna todos os eletrodomésticos salvos no banco de dados!
 
 ### POST 
 
-Cole o JSON e altere os dados, menos o ID, pois é gerado automaticamente!
+Cole o JSON e preencha os dados, menos o ID, pois é gerado automaticamente!
 
 ```
 {
-  "consultoriaId": 0,
-  "nomeConsultoria": "string"
+  "eletrodomesticosId": 0,
+  "nome_Aparelho": "string",
+  "valor_Consumo_Watts": 0,
+  "categoria": "string",
+  "modelo": "string"
 }
 ```
 
@@ -476,20 +473,83 @@ Digite o ID e altere o dado!
 
 ```
 {
-  "consultoriaId": 0,
-  "nomeConsultoria": "string"
+  "eletrodomesticosId": 0,
+  "nome_Aparelho": "string",
+  "valor_Consumo_Watts": 0,
+  "categoria": "string",
+  "modelo": "string"
 }
 ```
 
 ### DELETE
 
-Soemente o número do ID!
+Somente o número do ID!
+
+## Tabela Usuário
+
+### GET 
+
+Retorna todos os usuários salvos no banco de dados!
+
+### POST 
+
+Cole o JSON e preencha os dados, menos o ID, pois é gerado automaticamente!
+
+```
+{
+  "usuarioId": 0,
+  "nome": "string",
+  "email": "user@example.com",
+  "senha": "string",
+  "cep": "string"
+}
+```
+
+### GET pelo ID
+
+Somente retorna o ID digitado!
+
+### PUT
+
+Digite o ID e altere o dado!
+
+```
+{
+  "usuarioId": 0,
+  "nome": "string",
+  "email": "user@example.com",
+  "senha": "string",
+  "cep": "string"
+}
+```
+
+### DELETE
+
+Somente o número do ID!
 
 # No final o serviço de WebApp ficará assim na Azure!!!
 
-![image](https://github.com/user-attachments/assets/a0d67ffc-49ad-4aab-a7e3-af4cd8a256ae)
+![image](https://github.com/user-attachments/assets/0879124d-1814-44ca-b389-eb6bd21fad94)
 
-## Agora vamos criar o banco SQL da Azure na nuvem 
+# Banco de dados SQL da Azure pelo portal!
+
+![image](https://github.com/user-attachments/assets/d5f00c62-df66-416f-ae0a-11c01b236a51)
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Extra!!!
+
+## Criação de banco de dados SQL da Azure na nuvem. Essa é uma criação de banco de exemplo somente!!! Este banco de dados foi criado para a Sprint, mas segui o mesmo passo a passo para a criação do da GS, porém não gravei, pois a gravação da criação do banco de dados não era uma exigência e ja podia realizar os requisitos da GS com ele criado!!!
 
 Para isso crie um novo recurso e selecione "SQL Database"!
 
@@ -710,12 +770,6 @@ WHERE id_consulta = 5;
 DELETE FROM T_TC_CONSULTA
 WHERE dt_consulta = '2000-10-12';
 ```
-
-## Cole o script no console e realize a criação das tabelas (uma de cada vez) e os seus devidos CRUDS (um de cada vez)
-
-## Após realizar as tabelas e seus devidos cruds, podemos ver que as tabelas foram criadas, na parte de tabelas na lateral esquerda do console!!!
-
-![Screenshot 2024-09-16 235315](https://github.com/user-attachments/assets/c706b19e-05fb-4d85-baf7-8e960d746b41)
 
 ## Por fim podemos ver a criação do banco de dados dentro do grupo de recursos!!!
 
