@@ -120,3 +120,12 @@ namespace EcoWatt.Tests
         }
     }
 }
+
+//dependencias necessárias
+//dotnet add package Moq
+//dotnet add package xunit
+//dotnet add package xunit.runner.visualstudio
+//dotnet add package Microsoft.AspNetCore.Mvc
+//dotnet add package Microsoft.AspNetCore.Http
+//dotnet add package Microsoft.NET.Test.Sdk
+
