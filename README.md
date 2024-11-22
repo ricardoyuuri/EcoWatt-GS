@@ -567,6 +567,8 @@ Cole o JSON e preencha os dados!
 
 # Banco de dados SQL da Azure pelo portal!
 
+![image](https://github.com/user-attachments/assets/9cda2f49-6f6c-471e-b556-928b23e639ba)
+
 ![image](https://github.com/user-attachments/assets/d5f00c62-df66-416f-ae0a-11c01b236a51)
 
 # Passo 11 - Testando os testes unitários localmente!!!
@@ -838,10 +840,6 @@ DELETE FROM Consumo
 WHERE Data_Consumo = '2024-11-01';
 
 ```
-
-## Por fim podemos ver a criação do banco de dados dentro do grupo de recursos!!!
-
-![Screenshot 2024-09-16 235457](https://github.com/user-attachments/assets/aa0130a9-09a8-4956-8485-881e12ebe4c2)
 
 # Link do Azure DevOps:
 
