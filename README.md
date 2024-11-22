@@ -571,16 +571,13 @@ Cole o JSON e preencha os dados!
 
 # Passo 11 - Testando os testes unitários localmente!!!
 
+Abra o código fonte, clique em "Teste" e depois em "Executar todos os testes" e rode os testes unitários localmente!
 
+![image](https://github.com/user-attachments/assets/90748691-5d2e-4805-bbf5-ec617f639e25)
 
+Logo após, poderemos ver que os 5 testes unitários obtiveram sucesso.
 
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/9e79b65d-0f58-4ee7-b6e8-ae950c2c19e6)
 
 # Extra!!!
 
