@@ -23,9 +23,7 @@ O EcoWatt oferece diversos benefícios significativos para os usuários e o meio
 
 ## Desenho da arquitetura
 
-
-
-
+![image](https://github.com/user-attachments/assets/d636266c-394b-4e3d-82b3-a7488f0c148f)
 
 # Passo a passo de como criar uma Pipeline no Azure DevOps!!!
 
